@@ -3,14 +3,16 @@ package com.example.recyclerviewproject.adapter
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recyclerviewproject.model.Task
 
-class TaskListAdapter : RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
+class TaskListAdapter(private val tasks: List<Task>) : RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    // Retorna a quantidade de itens na lista para o adapter
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return tasks.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -25,4 +27,3 @@ class TaskListAdapter : RecyclerView.Adapter<TaskListAdapter.ViewHolder>() {
 
     }
 }
-
