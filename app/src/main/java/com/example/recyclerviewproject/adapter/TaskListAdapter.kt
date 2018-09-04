@@ -1,6 +1,7 @@
 package com.example.recyclerviewproject.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,9 +27,7 @@ class TaskListAdapter(private val tasks: List<Task>, private val context: Contex
     }
 
     // Retorna o tamanho da lista de itens para o adapter
-    override fun getItemCount(): Int {
-        return tasks.size
-    }
+    override fun getItemCount() = tasks.size
 
     /*
      * Método responsável por juntar as informações contidas no ViewHolder com os componentes do layout
@@ -40,7 +39,7 @@ class TaskListAdapter(private val tasks: List<Task>, private val context: Contex
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // Resgata o item da lista por meio da posição recebida para fazer o processo de bind (juntar as informações).
         val task = tasks[position]
-
+        Log.d("onBindViewHolder", task.title)
         /*
          * Abordagem 1
          * ----------------------------------------------------------------------------------------------------------------------------------------------------

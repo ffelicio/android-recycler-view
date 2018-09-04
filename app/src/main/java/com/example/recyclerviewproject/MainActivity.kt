@@ -1,9 +1,8 @@
 package com.example.recyclerviewproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerviewproject.adapter.TaskListAdapter
 import com.example.recyclerviewproject.model.Task
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = task_list_recyclerview
         recyclerView.adapter = TaskListAdapter(tasks(), this)
 
-        val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
     }
 
