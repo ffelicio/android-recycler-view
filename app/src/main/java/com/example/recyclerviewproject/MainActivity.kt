@@ -2,6 +2,7 @@ package com.example.recyclerviewproject
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerviewproject.adapter.TaskListAdapter
 import com.example.recyclerviewproject.model.Task
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
+
+        recyclerView.addItemDecoration(DividerItemDecoration(this, layoutManager.orientation))
     }
 
     private fun tasks(): List<Task> {
